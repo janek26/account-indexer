@@ -8,7 +8,8 @@
     "lint": "eslint src/ test/ --ext .ts --fix",
     "build": "tsc -p tsconfig.build.json",
     "dev": "nodemon src/index.ts",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/index.js",
+    "prepare": "patch-package"
   },
   "author": "Snapshot Labs",
   "license": "MIT",
@@ -32,6 +33,7 @@
     "eslint": "^8.15.0",
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^2.0.16",
+    "patch-package": "^6.5.0",
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
