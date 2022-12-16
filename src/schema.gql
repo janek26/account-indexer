@@ -1,0 +1,11 @@
+type account {
+  id: ID!
+  transaction_hash: String!
+  signer: String!
+  # implementation: String!
+  # type: String!
+  updated_at_block: Int!
+  created_at_block: Int!
+  updated_at: Int!
+  created_at: Int!
+}
