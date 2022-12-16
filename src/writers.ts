@@ -50,7 +50,7 @@ export const accountCreated: CheckpointWriter = async ({ event, tx, block, mysql
       created_at: block.timestamp
     };
 
-    await mysql.queryAsync('INSERT IGNORE INTO deployments SET ?', [account]);
+    await mysql.queryAsync('INSERT IGNORE INTO accounts SET ?', [account]);
   }
 };
 
@@ -67,6 +67,6 @@ export const accountUpdated: CheckpointWriter = async ({ event, block, mysql }) 
       updated_at: block.timestamp
     };
 
-    await mysql.queryAsync('UPDATE deployments SET ? WHERE id = ?', [account, accountAddress]);
+    await mysql.queryAsync('UPDATE accounts SET ? WHERE id = ?', [account, accountAddress]);
   }
 };

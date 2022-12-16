@@ -39,7 +39,11 @@ const checkpoint = new Checkpoint(
 );
 
 async function startCheckpoint() {
-  if (isDev) {
+  const { mysql } = checkpoint.getBaseContext();
+  // check if mysql db was used before
+  const [exists] = await mysql.queryAsync('SHOW TABLES LIKE "accounts"');
+  // needs also to run if no tables exist
+  if (isDev || !exists) {
     // resets the entities already created in the database
     // ensures data is always fresh on each re-run
     await checkpoint.reset();
