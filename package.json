@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "micro-starknet": "^0.1.2",
     "starknet": "^4.13.1"
   },
   "devDependencies": {
