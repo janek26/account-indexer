@@ -74,7 +74,7 @@ func accountsBySignersHandler(w http.ResponseWriter, r *http.Request) {
 	defer rows.Close()
 
 	// Parse the results and create the response
-	var accounts []Account
+	var accounts []Account = make([]Account, 0)
 	for rows.Next() {
 		var account Account
 
